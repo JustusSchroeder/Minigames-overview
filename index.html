@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Castle defense — overview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --sky: #7ec6ef;
+        --ink: #1a2420;
+        --muted: #4a5a52;
+        --paper: #f4efe2;
+        --panel: #fffaf0;
+        --edge: #2a332c;
+        --go: #2d8a3c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        line-height: 1.5;
+        background:
+          radial-gradient(circle at 12% -10%, #fff 0%, transparent 38%),
+          linear-gradient(#9ad4f2, var(--sky) 28%, #dce9c8 28%);
+      }
+
+      .wrap {
+        width: min(820px, calc(100% - 32px));
+        margin: 28px auto 64px;
+      }
+
+      header.hero {
+        background: var(--panel);
+        border: 2px solid var(--edge);
+        border-radius: 2px;
+        box-shadow: 0 8px 0 rgba(20, 32, 24, 0.16);
+        padding: 22px 24px 18px;
+      }
+
+      .kicker {
+        margin: 0 0 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--muted);
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        letter-spacing: -0.03em;
+      }
+
+      .lead {
+        margin: 0;
+        color: var(--muted);
+        max-width: 40rem;
+      }
+
+      section {
+        margin-top: 22px;
+        background: var(--panel);
+        border: 2px solid var(--edge);
+        border-radius: 2px;
+        box-shadow: 0 8px 0 rgba(20, 32, 24, 0.12);
+        padding: 18px 22px 20px;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 1.15rem;
+      }
+
+      ol.steps {
+        margin: 0;
+        padding-left: 1.2rem;
+      }
+
+      ol.steps li {
+        margin: 0.4rem 0;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 1.2rem;
+      }
+
+      li + li {
+        margin-top: 0.35rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        margin-top: 8px;
+      }
+
+      .card {
+        background: var(--paper);
+        border: 2px solid var(--edge);
+        padding: 10px 12px;
+      }
+
+      .card h3 {
+        margin: 0 0 4px;
+        font-size: 0.95rem;
+      }
+
+      .card p {
+        margin: 0;
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+
+      .note {
+        margin: 14px 0 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="hero">
+        <p class="kicker">Project overview</p>
+        <h1>Castle defense</h1>
+        <p class="lead">
+          A browser game: fly over a meadow island, build around the keep in the
+          middle, train an army, and hold off ten waves of attackers from the shore.
+        </p>
+      </header>
+
+      <section>
+        <h2>What this is</h2>
+        <p>
+          Castle defense is one of three games on the minigames home page, next to
+          Neon Clash and Mini 8-Ball. It runs in a web browser. There is no account
+          and nothing to install.
+        </p>
+        <div class="grid">
+          <div class="card">
+            <h3>The island</h3>
+            <p>The map is a small island: grass, woods, beach, shallow water, rocks, and sea. The keep stands in the centre. Enemies arrive in the water around the edge.</p>
+          </div>
+          <div class="card">
+            <h3>Building and gold</h3>
+            <p>The player draws wooden walls and places crossbows, cannons, farms, and barracks. The game starts with 180 gold. Selling a building returns all of that gold.</p>
+          </div>
+          <div class="card">
+            <h3>The army</h3>
+            <p>Barracks can train five kinds of soldiers. The player drags a box to select them, clicks the ground to send them, and can set a meeting point. Friendly troops can walk through the player’s own walls.</p>
+          </div>
+          <div class="card">
+            <h3>The waves</h3>
+            <p>There are ten waves: goblins, runners, archers, brutes, and ogres. They walk toward the keep and smash any wall in their path.</p>
+          </div>
+          <div class="card">
+            <h3>How it looks</h3>
+            <p>The player flies around the island. Walls look like wooden palisades. Soldiers look like small knights; enemies are green. They walk like people rather than sliding across the ground.</p>
+          </div>
+          <div class="card">
+            <h3>How it feels</h3>
+            <p>People are smaller than the walls, so the island feels large. The view can move quickly. Cannons hit a small group, so a crowd of enemies is still dangerous.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>How the game was built</h2>
+        <ol class="steps">
+          <li>Castle defense was added to the minigames home page, next to the other two games.</li>
+          <li>The meadow island, the keep, and a view the player can fly around came first.</li>
+          <li>Next came building: spend gold on farms, towers, and walls drawn as a line on the grass.</li>
+          <li>Then the attack: enemies land from the shore, walk to the keep, break walls, and the player wins or loses over ten waves.</li>
+          <li>Then an army: train groups at the barracks, select them with a drag box, and send them out.</li>
+          <li>Characters got a proper look — knights on the player’s side, green attackers — and they walk instead of sliding.</li>
+          <li>Last polish: taller walls, a quicker view, and cannons that hit a small group so a crowd of enemies still matters.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>How to try it</h2>
+        <ol class="steps">
+          <li><strong>Get ready.</strong> Press Play, click the meadow so the mouse looks around, then fly with the keyboard. Place farms on grass for gold, barracks for soldiers, and walls and towers for defense. During this setup, gold cannot go above 400.</li>
+          <li><strong>Train an army.</strong> Click a barracks and pick a troop. They appear and walk to the meeting point. Drag a box around soldiers to select them, then click the ground to send them. Q drops the selection. E selects everyone.</li>
+          <li><strong>Start the waves.</strong> Enemies appear in the shallow water around the island. They walk from the beach, across the grass, toward the keep. If a wall is in the way, they attack the wall instead of going around it.</li>
+          <li><strong>Defend.</strong> Crossbows shoot one enemy at a time. Cannons hit a small group nearby. Soldiers fight anything close enough.</li>
+          <li><strong>Win or lose.</strong> If the keep’s health reaches zero, the game is lost. If wave 10 is cleared, the game is won. Defeated enemies give gold, and farms keep earning during play.</li>
+        </ol>
+        <p class="note">A building can be sold at any time to get the gold back and change the layout.</p>
+      </section>
+    </div>
+  </body>
+</html>
